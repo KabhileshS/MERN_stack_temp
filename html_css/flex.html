@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex CSS</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        header{
+            background-color: chocolate;
+        }
+        nav{
+            display: flex;
+            flex-direction:column;
+            list-style-type: none;
+            justify-content: space-evenly;
+            background-color: chocolate;
+            padding: 10px;
+            font-size: larger;
+        }
+        .link{
+            text-decoration: none;
+            color: white;
+            padding: 3px;
+        }
+        .link:hover{
+            color: chocolate;
+            background-color: white;
+            border-radius: 5px;
+            
+        }
+    @media screen and (max-width:600px) {
+        body{
+            margin: 0;
+        }
+        header{
+            background-color: chocolate;
+        }
+        nav{
+            display: flex;
+            flex-direction:column;
+            list-style-type: none;
+            justify-content: space-evenly;
+            background-color: chocolate;
+            padding: 10px;
+            font-size: larger;
+        }
+        .link{
+            text-decoration: none;
+            color: white;
+            padding: 3px;
+        }
+        .link:hover{
+            color: chocolate;
+            background-color: white;
+            border-radius: 5px;
+            
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="sjit.png" alt="" height="85px" width="85px">
+        <h1 style="display: inline-block;">St. Joseph's Institute of Technology</h1>
+        <nav>
+            <li><a href="#" class="link">HOME</a></li>
+            <li><a href="#" class="link">ABOUT</a></li>
+            <li><a href="#" class="link">SKILLS</a></li>
+            <ol>
+                <li>Technical</li>
+                <li>Soft</li>
+                <li>Designing</li>
+                <li>Functional</li>
+            </ol>
+            <li><a href="#" class="link">EDUCATION</a></li>
+            <li><a href="#" class="link">CONTACT</a></li>
+        </nav>
+    </header>
+    
+</body>
+</html>
