@@ -72,16 +72,18 @@ object1={
 //}
 
 
-// Object. entries/keys/values
-
-for({key,value} of Object.entries(object1)){
-    console.log(key,value);
-}
-
 // for(key of object.keys(object1)){
 //     console.log(key,value);
 // }
 
-Object.entries(object1).forEach((ele)=>{
-    console.log(key,ele);
-})
+
+// Object. entries/keys/values
+
+// for({key,value} of Object.entries(object1)){
+//     console.log(key,value);
+// }
+
+// Object.entries(object1).forEach((ele)=>{
+//     console.log(key,ele);
+// })
+
