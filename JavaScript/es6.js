@@ -77,8 +77,6 @@
 // // aluminiDB=stud4year
 // // console.log(aluminiDB)
 
-//task 7- difference between spread and rest operators
-
 
 
 // 5) Rest operator
