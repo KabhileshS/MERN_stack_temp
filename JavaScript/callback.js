@@ -40,18 +40,3 @@
 
 
 
-// Async
-
-// async function asAw(){
-//     console.log("Hello")
-// }
-// console.log(asAw())
-
-async function asAw() {
-    setTimeout(function(){
-
-    },5000)
-}
-console.log(asAw().then((res)=>{
-    console.log(res)
-}))
