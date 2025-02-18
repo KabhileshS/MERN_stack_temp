@@ -117,13 +117,3 @@
 // obj=new ClassEg()
 // console.log(obj.classFun)
 
-
-
-function SjitCollege(message){
-    console.log(message)
-    abc()
-}
-function callbacksSjit(){
-    console.log("Welcome back to Sjit")
-}
-SjitCollege("Welcome to Sjit",callbacksSjit)
