@@ -7,6 +7,7 @@ import Signup from "./components/FunctionalComponents/Signup";
 import Navbar from "./components/FunctionalComponents/Navbar";
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import ClassCompEg from "./components/ClassComponents/ClassCompEG";
+import UseEffect from "./components/FunctionalComponents/UseEffect";
 
 function App() {
   return (
@@ -14,20 +15,22 @@ function App() {
       <div>
         <main>
           <BrowserRouter>
+          <Navbar />
             <Routes>
               <Route path='/' element={<Home properties="Hello, " sjit="SJIT" welcome="welcome" />} />
               <Route path='/about' element={<About/>} />
               <Route path='/gallery' element={<Gallery/>} />
               <Route path='/contact' element={<Contact />} />
+              <Route path='/login'element={<Login/>}  />
               <Route path='/signup' element={<Signup/>}/>
+              <Route path='useeffect' element={<UseEffect/>} />
             </Routes>
           </BrowserRouter>
         </main>
         <h1>Welcome to React</h1>
-        <Navbar />
         {/* <ClassCompEg /> */}
-        <hr />
-        {/* <Home properties="Hello, " sjit="SJIT" welcome="welcome" />
+        {/* <hr />
+        <Home properties="Hello, " sjit="SJIT" welcome="welcome" />
         <hr />
         <About />
         <hr />
@@ -36,9 +39,9 @@ function App() {
         <Contact />
         <hr />
         <Login />
-        <hr /> */}
-        <Signup />
         <hr />
+        <Signup />
+        <hr /> */}
       </div>
     </>
   );
