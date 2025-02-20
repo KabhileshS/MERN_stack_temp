@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { useState,useEffect } from "react";
 
 function slowFunction(num){
-    for(var i=0; i<=100;i++){}
+    for(var i=0; i<=150000000;i++){}
     return num*2;
 }
 
@@ -13,6 +13,11 @@ const UseMemo = () => {
         backgroundColor: theme? "black":"white",
         color: theme? "white":"black",
     }
+    // var styling =useMemo(()=>{
+    //     backgroundColor: theme? "black":"white",
+    //     color: theme? "white":"black",
+    // })
+
     var doublingUpANumber=useMemo(()=>{
         return slowFunction(number);
     },[number])
@@ -26,7 +31,7 @@ const UseMemo = () => {
         Number Box: <input type="number" value={number} onChange={(e)=>setNumber(e.target.value)} />
         <h2>The Number is {number}</h2>
         <h2>The number is {slowFunction(number)}</h2>
-        <h2>The number is {doublingUpANumber(number)} </h2>
+        <h2>The number is {doublingUpANumber} </h2>
         </div>
     </>
     )
