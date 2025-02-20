@@ -8,6 +8,7 @@ function Gallery(){
             <h2>Initial string: {""} </h2>
             <button onClick={()=>setStr(str+"a")}>Add string</button>
             <h2>Updated String: {str} </h2>
+            <button onClick={()=>setStr("")}>Reset</button>
         </div>
     )
 }

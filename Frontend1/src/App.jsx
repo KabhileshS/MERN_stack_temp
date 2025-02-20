@@ -23,11 +23,11 @@ function App() {
               <Route path='/contact' element={<Contact />} />
               <Route path='/login'element={<Login/>}  />
               <Route path='/signup' element={<Signup/>}/>
-              <Route path='useeffect' element={<UseEffect/>} />
+              <Route path='/useeffect' element={<UseEffect/>} />
             </Routes>
           </BrowserRouter>
         </main>
-        <h1>Welcome to React</h1>
+        {/* <h1>Welcome to React</h1> */}
         {/* <ClassCompEg /> */}
         {/* <hr />
         <Home properties="Hello, " sjit="SJIT" welcome="welcome" />

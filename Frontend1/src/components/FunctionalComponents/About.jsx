@@ -17,7 +17,7 @@ function About() {
       <h3>Updating State: {num} </h3>
       <button onClick={() => setNum(num+1)}>+</button>
       <br /><br />
-      <button onClick={()=>setNum(0)}>Reset</button>
+      <button onClick={()=>setNum(0)}>Reset to 0</button>
     </div>
   );
 }
