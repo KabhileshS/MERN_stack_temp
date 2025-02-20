@@ -1,14 +1,58 @@
-*{
-    /* margin: 0; */
-    /* padding: 0; */
-}
+/* *{ */
+    /* margin: 0;
+    padding: 0;
+    box-sizing: border-box; */
+/* } */
 
 nav{
     display: flex;
-    list-style-type:none ;
     background-color: chocolate;
     color: aliceblue;
     justify-content: space-around;
     padding: 10px;
     border-radius: 10px;
+}
+
+nav li{   /* This specifies that the li inside the nav will only be affected */
+    list-style-type: none;
+    text-decoration: none;
+    padding: 10px;
+    border-radius : 10px; ;
+}
+nav Link{
+    text-decoration: none;
+}
+li:hover{
+    background-color: aliceblue;
+}
+
+.link{
+    text-decoration: none;
+    color: rgb(65, 25, 141);
+    padding: 10px;
+    display: inline-block;
+
+}
+.link:hover{
+    background-color: aliceblue;
+    color: chocolate;
+    border-radius: 10px;
+}
+.dropdown-list{
+    display: block;
+    position: absolute;
+    background-color: rgb(190,157,133);
+    list-style-type: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top:0;
+}
+.dropdown-link{
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+
+}
+.dropdown-link:hover{
+    background-color: white;
 }
