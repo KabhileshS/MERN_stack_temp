@@ -1,0 +1,11 @@
+/* styling for all fields */
+input{
+    border: 1px solid blueviolet;
+    border-radius: 30px;
+}
+
+/* styling for particular input field types */
+input[type=number]{
+    border: 1px solid blueviolet;
+    border-radius: 30px;
+}
