@@ -13,4 +13,4 @@ const TextFile = () => {
   )
 }
 
-export default memo(TextFile)
+export default memo(TextFile);
