@@ -22,9 +22,11 @@ const Navbar = () => {
                   <li><Link className="dropdown-link" to="/use-ref">UseRef</Link></li>
                   <li><Link className="dropdown-link" to="/use-memo">UseMemo</Link></li>
                   <li><Link className="dropdown-link" to="/use-callback">UseCallback</Link></li>
+                  <li><Link className="dropdown-link" to="/use-memoize">UseMemoizeCustomeHook</Link></li>
                 </ol>
               )}
             </div>
+            <li><Link to='/hoc'>HoC</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/login'>Login</Link></li>
         </nav>
