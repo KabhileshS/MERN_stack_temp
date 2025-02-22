@@ -21,8 +21,19 @@ const Navbar = () => {
                   <li><Link className="dropdown-link" to="/use-effect-api">UseEffectAPI</Link></li>
                   <li><Link className="dropdown-link" to="/use-ref">UseRef</Link></li>
                   <li><Link className="dropdown-link" to="/use-memo">UseMemo</Link></li>
+                  <li><Link className="dropdown-link" to="/use-callback">UseCallback</Link></li>
+                  <li><Link className="dropdown-link" to="/use-memoize">UseMemoizeCustomeHook</Link></li>
                 </ol>
               )}
+            </div >
+            <li><Link to='/hoc'>HoC</Link></li>
+            <div className="dropdown" onMouseEnter={()=>setDropdown(true)} onMouseLeave={()=>setDropdown(false)}>
+              <span className='link'>Memoization</span>
+              {dropdown && (<ol className="dropdown-list">
+                <li>
+                  <Link to="/memo" className='dropdown-link'>Memo</Link>
+                </li>
+              </ol>)}
             </div>
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/login'>Login</Link></li>
