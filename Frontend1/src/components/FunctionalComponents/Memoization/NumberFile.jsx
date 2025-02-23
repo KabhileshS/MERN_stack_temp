@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { memo , useState } from 'react'
 
 const NumberFile = () => {
 
@@ -6,9 +6,10 @@ const NumberFile = () => {
 
   return (
     <div>
-      <h1>This is text box</h1>
+      <h1>This is number box</h1>
+      <input type="number" value={number} onChange={(e)=>setNum(e.target.value)} />
     </div>
   )
 }
 
-export default NumberFile
+export default memo(NumberFile)

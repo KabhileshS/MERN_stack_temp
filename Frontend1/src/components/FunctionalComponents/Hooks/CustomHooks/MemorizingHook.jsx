@@ -8,6 +8,7 @@ const useMemoize = (key,value) => {
         return value
     })
     useEffect(()=>{
+        console.log(key,text)
         localStorage.setItem(key,JSON.stringify(text))
     },[key,text])
     return [text,setText]

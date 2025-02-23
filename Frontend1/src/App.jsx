@@ -16,6 +16,8 @@ import UseCallback from "./components/FunctionalComponents/Hooks/UseCallback";
 import UseMemoize from "./components/FunctionalComponents/Hooks/UseMemoize";
 import HoC from "./components/FunctionalComponents/HoC/HoC";
 import Memo from "./components/FunctionalComponents/Memoization/Memo";
+import LazyLoadingAndSuspense from "./components/FunctionalComponents/Memoization/LazyLoadingAndSuspense";
+
 
 function App() {
   return (
@@ -28,9 +30,6 @@ function App() {
               <Route path='/' element={<Home properties="Hello, " sjit="SJIT" welcome="welcome" />} />
               <Route path='/about' element={<About/>} />
               <Route path='/gallery' element={<Gallery/>} />
-              <Route path='/contact' element={<Contact />} />
-              <Route path='/login'element={<Login/>}  />
-              <Route path='/signup' element={<Signup/>}/>
               <Route path='/use-effect' element={<UseEffect/>} />
               <Route path='/use-state' element={<UseState/>} />
               <Route path="/use-effect-api" element={ <UseEffectAPI/> } />
@@ -40,6 +39,10 @@ function App() {
               <Route path="/use-memoize" element={<UseMemoize/>} />
               <Route path="/hoc" element={<HoC/>} />
               <Route path="/memo" element={<Memo/>} />
+              <Route path="/lazy" element={<LazyLoadingAndSuspense/>} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/login'element={<Login/>}  />
+              <Route path='/signup' element={<Signup/>}/>
             </Routes>
           </BrowserRouter>
         </main>

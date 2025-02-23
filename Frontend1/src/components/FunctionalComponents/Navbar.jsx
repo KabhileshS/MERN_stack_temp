@@ -4,6 +4,8 @@ import '../css/Navbar.css'
 
 const Navbar = () => {
   var [dropdown,setDropdown] = useState(false)
+  var [dropdown1,setDropdown1] = useState(false)
+
   return (
     <header>
         <nav>
@@ -27,12 +29,12 @@ const Navbar = () => {
               )}
             </div >
             <li><Link to='/hoc'>HoC</Link></li>
-            <div className="dropdown" onMouseEnter={()=>setDropdown(true)} onMouseLeave={()=>setDropdown(false)}>
+            <div className="dropdown" onMouseEnter={()=>setDropdown1(true)} onMouseLeave={()=>setDropdown1(false)}>
               <span className='link'>Memoization</span>
-              {dropdown && (<ol className="dropdown-list">
-                <li>
-                  <Link to="/memo" className='dropdown-link'>Memo</Link>
-                </li>
+              {dropdown1 && 
+                  (<ol className="dropdown-list">
+                    <li><Link to="/memo" className='dropdown-link'>Memo</Link></li>
+                    <li><Link to="/lazy" className='dropdown-link'>Lazy Component</Link></li>
               </ol>)}
             </div>
             <li><Link to='/contact'>Contact</Link></li>
