@@ -1,6 +1,6 @@
 import Exam from "./Exam"
 import { useContext } from "react"
-import { ResultPublish } from "..CoE"
+import { ResultPublish } from "../CoE"
 
 const StudentResults = (res) => {
     const result=useContext(ResultPublish)
