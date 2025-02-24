@@ -37,6 +37,7 @@ const Navbar = () => {
                     <li><Link to="/lazy" className='dropdown-link'>Lazy Component</Link></li>
               </ol>)}
             </div>
+            <li><Link to='/res'>Context API</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/login'>Login</Link></li>
         </nav>

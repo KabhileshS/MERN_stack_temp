@@ -17,7 +17,8 @@ import UseMemoize from "./components/FunctionalComponents/Hooks/UseMemoize";
 import HoC from "./components/FunctionalComponents/HoC/HoC";
 import Memo from "./components/FunctionalComponents/Memoization/Memo";
 import LazyLoadingAndSuspense from "./components/FunctionalComponents/Memoization/LazyLoadingAndSuspense";
-
+// import StudentResults from "./components/FunctionalComponents/ContextAPI/StudentResults";
+import CoE from "./components/FunctionalComponents/CoE";
 
 function App() {
   return (
@@ -40,6 +41,8 @@ function App() {
               <Route path="/hoc" element={<HoC/>} />
               <Route path="/memo" element={<Memo/>} />
               <Route path="/lazy" element={<LazyLoadingAndSuspense/>} />
+              <Route path="/res" element={<CoE/>} />
+              {/* <Route path="/coe" element={<CoE sgpa="8 SGPA" cgpa="9 CGPA" />} /> */}
               <Route path='/contact' element={<Contact />} />
               <Route path='/login'element={<Login/>}  />
               <Route path='/signup' element={<Signup/>}/>
