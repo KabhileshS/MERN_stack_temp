@@ -2,6 +2,7 @@ const express = require("express");
 const mdb = require("mongoose");
 const dotenv = require("dotenv");
 const Signup = require("./models/signupSchema")
+const bcrypt=require('bcrypt')
 const app = express();
 app.use(express.json())
 const PORT = 3001;
@@ -19,14 +20,15 @@ app.get("/", (req, res) => {
     res.send("<h1>Welcome to Backend Server Hehekeke </h1>");
 });
 
-app.post("/signup",(req,res)=>{
+app.post("/signup",async (req,res)=>{
     try{
         const {firstName,lastName,email,password,phoneNumber}=req.body
+        const hashPassword= await bcrypt.hash(password,10)
         const newSignup= new Signup({
             firstName:firstName,
             lastName:lastName,
             email:email,
-            password:password,
+            password:hashPassword,
             phoneNumber:phoneNumber,
         })
         newSignup.save()
