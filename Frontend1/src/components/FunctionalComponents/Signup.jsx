@@ -4,12 +4,12 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom"
 
 function Signup() {
-  const Navigate=useNavigate()
-  var [firstName,setFN]=useState("")
-  var [lastName,setLN]=useState("")
-  var [email,setEmail]=useState("")
-  var [password,setPass]=useState("")
-  var [phoneNumber,setPN]=useState(0)
+  const navigate=useNavigate()
+  const [firstName,setFN]=useState("")
+  const [lastName,setLN]=useState("")
+  const [email,setEmail]=useState("")
+  const [password,setPass]=useState("")
+  const [phoneNumber,setPN]=useState(0)
   const handleSignup=async(event)=>{
     event.preventDefault()
     const req=await axios.post("http://localhost:3001/signup",{
@@ -20,10 +20,10 @@ function Signup() {
       phoneNumber:phoneNumber
     })
     const message=req.data.message
-    const isSignup=req.data.Signup
+    const isSignup=req.data.isSignup
     if(isSignup){
       alert(message)
-      Navigate('/login')
+      navigate('/login')
     }else{
       alert(message)
     }
