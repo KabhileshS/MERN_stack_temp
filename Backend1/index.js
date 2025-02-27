@@ -4,8 +4,15 @@ const dotenv = require("dotenv");
 const Signup = require("./models/signupSchema")
 const bcrypt=require('bcrypt')
 const cors=require('cors')
+const jwt=require('jsonwebtoken')
 const app = express();
-app.use(cors())
+
+app.use(cors({
+  origin:['https://mern-stack-temp.vercel.app','http://localhost:3001'],
+  methods:['GET','POST'],
+  allowedHeaders:['Content-Type','Authorization']
+}))
+
 app.use(express.json())
 const PORT = 3001;
 dotenv.config();
@@ -37,8 +44,15 @@ app.post("/login",async(req,res)=>{
       return res.status(201).json({message:"Invalid Password",isLogin:false})
     }
     // console.log(email,password)
+    const payload={
+        firstName:user.firstName,
+        email:user.email
+    }
+    const token=jwt.sign(payload,process.env.SECRET_KEY,{expiresIn:"1m"})
+    console.log(token)
+
     console.log("Login Successful")
-    res.status(201).json({message:"Login Successful",isLogin:true})
+    res.status(201).json({message:"Login Successful",isLogin:true,token:token})
   }
   catch(error){
     console.log("Login Unsuccessful")
@@ -78,7 +92,24 @@ app.post("/signup",async (req,res)=>{
 //   }
 // })
 
-app.get('/getsignupdetails',(req,res)=>{
+const verifyTok=(req,res,next)=>{
+  console.log("Middleware Check");
+  const token=req.headers.authorization
+  
+  if(!token){
+    res.json("Request Denied")
+  }
+  try{
+    console.log(token)
+    
+  }
+  catch{
+
+  }
+  next()
+}
+
+app.get('/getsignupdetails',verifyTok,(req,res)=>{
   const signup=Signup.find()
   console.log(signup)
   res.send("Signup details fetched")

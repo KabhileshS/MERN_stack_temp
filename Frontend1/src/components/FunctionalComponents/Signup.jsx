@@ -10,9 +10,11 @@ function Signup() {
   const [email,setEmail]=useState("")
   const [password,setPass]=useState("")
   const [phoneNumber,setPN]=useState(0)
+  const [signing,setSigning]=useState(false)
   const handleSignup=async(event)=>{
     event.preventDefault()
-    const req=await axios.post("https://mern-stack-temp.onrender.com/signup",{
+    setSigning(true)
+    const req=await axios.post("https://mern-stack-temp.onrender.com/signup",{ //"http://localhost:3001/signup" :- use for local hosting  //"https://mern-stack-temp.onrender.com/signup" :-use for deployment   
       firstName:firstName,
       lastName:lastName,
       email:email,
@@ -27,28 +29,28 @@ function Signup() {
     }else{
       alert(message)
     }
-    
+    setSigning(false)
   }
   return (
     <div>
       <h1>Signup Page</h1>
       <form onSubmit={handleSignup}>
         <label htmlFor="firstName">  FirstName: </label>
-        <input type="text" id="firstName" value={firstName} onChange={(e)=>setFN(e.target.value)} required/>
+        <input type="text" id="firstName" value={firstName} onChange={(e)=>setFN(e.target.value)} disabled={signing} required/>
         <br />
         <label htmlFor="lastName">   LastName:  </label>
-        <input type="text" id="lastName" value={lastName} onChange={(e)=>setLN(e.target.value)} required/>
+        <input type="text" id="lastName" value={lastName} onChange={(e)=>setLN(e.target.value)} disabled={signing} required/>
         <br />
         <label htmlFor="email">   Email:  </label>
-        <input type="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} required/>
+        <input type="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} disabled={signing} required/>
         <br />
         <label htmlFor="password">   Password:  </label>
-        <input type="password" id="password" value={password} onChange={(e)=>setPass(e.target.value)} required/>
+        <input type="password" id="password" value={password} onChange={(e)=>setPass(e.target.value)} disabled={signing} required/>
         <br />
         <label htmlFor="phoneNumber">   PhoneNumber:  </label>
-        <input type="number" id="phoneNumber" value={phoneNumber} onChange={(e)=>setPN(e.target.value)} required/>
+        <input type="number" id="phoneNumber" value={phoneNumber} onChange={(e)=>setPN(e.target.value)} disabled={signing} required/>
         <br />
-        <button type="submit">SignUp</button>
+        <button type="submit">{signing?"Signing Up":"Signup"}</button>
       </form>
       <p>Already have an account? <Link to='/login'>Login</Link> </p>
     </div>
