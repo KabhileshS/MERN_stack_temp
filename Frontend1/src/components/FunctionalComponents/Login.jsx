@@ -8,11 +8,23 @@ function Login() {
   const [email,setEmail]=useState("")
   const [password,setPass]=useState("")
   const [loading,setLoading]=useState(false)
+  const [loginStatus,setLS]=useState(false)
+
+  const userAuthenticated=()=>{
+    axios.get("http://localhost:3001/isUserAuth",{
+      headers:{
+        "x-access-token":localStorage.getItem("token")
+      }
+    }).then((response)=>{
+      console.log(response)
+      setLS(true)
+    })
+  }
 
   const handleLogin=async(event)=>{
     event.preventDefault()
     setLoading(true)
-    const req=await axios.post("https://mern-stack-temp.onrender.com/login",{ // "http://localhost:3001/login" use it for local hosting
+    const req=await axios.post("http://localhost:3001/login",{ // "http://localhost:3001/login" use it for local hosting
       email:email,
       password:password
     })
@@ -20,6 +32,9 @@ function Login() {
     const isLogin=req.data.isLogin
     if(isLogin){
       alert(message)
+      // console.log(req.data)
+      localStorage.setItem("token",req.data.token)
+      setLS(true)
       navigate('/')
     }else{
       alert(message)
@@ -41,6 +56,11 @@ function Login() {
         <button type="submit" disabled={loading}>{loading?"Logging in":"Login"}</button>
        </form>
       <p>Create an Account ? <Link to='/signup' >Signup</Link> </p>
+      {
+        loginStatus && (
+          <button onClick={userAuthenticated}>Check if Authenticated</button>
+      )
+      }
     </div>
   )
 }

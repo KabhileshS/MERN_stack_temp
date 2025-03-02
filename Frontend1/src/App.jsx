@@ -19,8 +19,11 @@ import Memo from "./components/FunctionalComponents/Memoization/Memo";
 import LazyLoadingAndSuspense from "./components/FunctionalComponents/Memoization/LazyLoadingAndSuspense";
 // import StudentResults from "./components/FunctionalComponents/ContextAPI/StudentResults";
 import CoE from "./components/FunctionalComponents/CoE";
+import Footer from "./components/FunctionalComponents/Footer";
+import { useState } from "react";
 
 function App() {
+  
   return (
     <>
       <div>
@@ -28,7 +31,7 @@ function App() {
           <BrowserRouter>
           <Navbar />
             <Routes>
-              <Route path='/' element={<Home properties="Hello, " sjit="SJIT" welcome="welcome" />} />
+              <Route path='/' element={<><Home properties="Hello, " sjit="SJIT" welcome="welcome" /> <Footer/> </>} />
               <Route path='/about' element={<About/>} />
               <Route path='/gallery' element={<Gallery/>} />
               <Route path='/use-effect' element={<UseEffect/>} />

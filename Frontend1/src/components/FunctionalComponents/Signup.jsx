@@ -14,7 +14,7 @@ function Signup() {
   const handleSignup=async(event)=>{
     event.preventDefault()
     setSigning(true)
-    const req=await axios.post("https://mern-stack-temp.onrender.com/signup",{ //"http://localhost:3001/signup" :- use for local hosting  //"https://mern-stack-temp.onrender.com/signup" :-use for deployment   
+    const req=await axios.post("http://localhost:3001/signup",{ //"http://localhost:3001/signup" :- use for local hosting  //"https://mern-stack-temp.onrender.com/signup" :-use for deployment   
       firstName:firstName,
       lastName:lastName,
       email:email,
